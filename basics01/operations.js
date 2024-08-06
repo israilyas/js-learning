@@ -1,6 +1,6 @@
 /*============= OPERATIONS ==============*/
-let value = 3
-let nedValue = -value
+// let value = 3
+// let nedValue = -value
 
 // console.log(nedValue)
 
@@ -22,10 +22,15 @@ console.log(1 + 2 + "2") // if string last then first arthimatimic addition perf
 // console.log(+true) // dont use this
 // console.log(+"")  // dont use
 
-let num1, num2, num3
-num1 = num2 = num3 // dont use this
+// let num1, num2, num3
+// num1 = num2 = num3 // dont use this
 
-let gameCounter = 100
-gameCounter++; //increment after usage
-++gameCounter; // iincrement before usage
-console.log(gameCounter)
+// let gameCounter = 100
+// gameCounter++; //increment after usage
+// ++gameCounter; // iincrement before usage
+// console.log(gameCounter)
+
+let x = 0
+let y = x++ + ++x - ++x + --x - x-- + x++
+
+console.log(y)
