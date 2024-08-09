@@ -1,0 +1,102 @@
+// IMPORTANT for interviews
+// How code executes?
+
++++++++ Javascript Execution Context +++++++++
+
+{ code files}  ===> Global Execution context ==> this variable is refered to GEC
+
+GEC is different for browser and environmts
+
+Browser ==> Window Object(value of this)
+
+// JS is single threaded
+
+
++++++++ Javascript Execution Context +++++++++
+
+1) Globla Execuation Context
+2) Function Execution Context
+3) Eval Execution context  (Property of global object)
+
+++++++++ JS CODE EXECUTION +++++++++
+
+1) Memory Creation Phase / Creation Phase:
+space allocate for variables and anyother thing you declare in this phase (no execution of  any operations like methamatical function etc)
+
+2) Execution Phase
+
+
+++++++ CODE ++++++
+
+let val1 = 10
+let val2 = 5
+
+function addNum(num1,num2){
+    let total = num1 + num2
+    return total
+}
+
+let result1 = addNum(val1,val2)
+let result2 = addNum(10,2)
+
+++++++ STEPS OF EXECUTION OF CODE ++++++
+
+1) GLobal Execution/ Global Environment
+Jo bhi code run krna ho usko sab sey pehley GE sey run kya jata hae ==> aur ye sab sey pehley allocate hota hae "This" k andar
+
+2) Memoory Phase:
+Sarey variable ko jama kya jata hae aur unko apney pass mein rakha jata hae -> aur unko undefined value di jati hae 
+
+val1 -> undefined
+val2 -> undefined
+addNum -> Definition
+result1 ->  undefined
+result2 ->  undefined
+
+3) Execution Phase
+
+val1 -> 10
+val2 -> 5
+addNum -> Definition (no change in execution phase)
+result1 ->15  addNum ->{
+[
+    // another executional context
+
+new variable Environment
+        +
+execution thread 
+
+]    
+ 
+
+1) Memory Phase
+val1 -> undefined 
+val2 -> undefined
+total -> undefined  
+
+2) Execution Context
+num1 -> 10 
+num2 -> 5
+total -> 15  
+total will return ib global executional context
+
+// Important
+after this -> this new global executional context will delete
+}
+result2 ->  {
+[ new variable environment + thread]
+
+}
+
++++++++++++++ CALL STACK ++++++++++++++++
+
+function one() {
+    console.log("one")
+    function two() {
+        console.log("two")
+        function three() {
+            console.log("three")
+        }
+    }
+}
+    one()

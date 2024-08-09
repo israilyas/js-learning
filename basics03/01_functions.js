@@ -10,7 +10,7 @@
 //         console.log("R");
 //         console.log("A");
 // }
-// //sayMyName -> function reference
+////sayMyName -> function reference
 // sayMyName() //execution
 
 // Parameters ->Input Used in function definition
