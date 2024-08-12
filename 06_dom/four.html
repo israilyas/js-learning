@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language" >
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const newLi = document.createElement('li')
+        newLi.innerHTML = `${langName}`//complete tree traversing
+        const parent = document.querySelector('.language')
+        parent.appendChild(newLi)
+    }
+    // addLanguage("python")// not  optimize approach
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        const addText = document.createTextNode(langName)
+        li.appendChild(addText)
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage("Java")
+    addOptiLanguage("Python")
+    addOptiLanguage("HTML CSS")
+
+    // +++++ EDIT +++++
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Assembly"
+    const newLi = document.createElement('li')
+    newLi.textContent = "TypeScript"
+    secondLang.replaceWith(newLi)
+
+// +++++ EDIT +++++
+
+const firstLang = document.querySelector('li:first-child')
+firstLang.outerHTML = '<li>CPP</li>'
+
+//+++++ REMOVE +++++
+const lastLang = document.querySelector('li:last-child')
+lastLang.remove()
+
+
+</script>
+</html>
