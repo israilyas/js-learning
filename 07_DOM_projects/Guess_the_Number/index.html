@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+    <!-- Bootstrap CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+
+<div id="wrapper">
+    <h1>Number Guessing Dame</h1>
+    <p>Try and guess a random number between 1 and 100</p>
+    <p>You have 10 attempts to guess the right number</p>
+    <br>
+    <form class="form">
+        <label for="guessField" id="guess">Guess a number</label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" id="subt" class="guessSubmit">
+    </form>
+    <div class="resultParas">
+        <p>Presious Guesses: <span class="guesses"></span></p>
+        <p>Guess Remaining: <span class="lastResult">10</span></p>
+        <p class="lowOrHi"></p>
+    </div>
+</div>
+
+<!-- My JS Script  -->
+<script src="script.js"></script>
+
+<!-- Bootstrap JS  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
