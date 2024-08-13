@@ -1,13 +1,18 @@
 // const randomNumber =Math.round(Math.random()*100+1)
 let randomNumber = parseInt(Math.random() * 100 + 1)
-// console.log(randomNumber);
 
 const submit = document.querySelector('#subt')
 const userInput = document.querySelector('#guessField')
 const guessSlot = document.querySelector('.guesses')
 const remainingSlot = document.querySelector('.lastResult')
-const lowOrHi = document.querySelector('.lowOrHi')
-const startOver = document.querySelector('.resultParas')
+const popup = document.querySelector('#popup')
+const popupClose = document.querySelector('#popupClose')
+const msgHead = document.querySelector('#msgHead')
+const msg = document.querySelector('#msg')
+const icon = document.querySelector('.icon')
+const  startOver = document.querySelector('.resultParas')
+
+
 
 const p = document.createElement('p')
 
@@ -19,11 +24,11 @@ if (playGame) {
     submit.addEventListener('click', function (e) {
         e.preventDefault()
         const guess = parseInt(userInput.value)
-        console.log(guess);
-
         validateGuess(guess)
+
     })
 }
+
 
 function validateGuess(guess) {
     //validation check -> if value is between 1 and 100 and check datatype
@@ -38,10 +43,9 @@ function validateGuess(guess) {
     }
     else {
         preGuess.push(guess)
-        console.log(preGuess);
-        if (numGuess > 10) {
+        if (numGuess === 4) {
             displayGuess(guess)
-            displayMessage(`Game Over. Random number was ${randomNumber}`)
+            displayMessage('Game Over',`Random number was ${randomNumber}`)
             endGame()
         }
         else {
@@ -54,36 +58,49 @@ function validateGuess(guess) {
 function checkGuess(guess) {
     //check if value equal to random number
     if (guess === randomNumber) {
-        displayMessage('You guesses it right.')
+        displayMessage('Congratulations!','You guesses it right.')
+        icon.innerHTML = `<ion-icon class="check-icon" name="checkmark-done-circle-outline"></ion-icon>`
         endGame()
     }
     else if (guess > randomNumber) {
-        displayMessage('You guessed a greater number.')
+        displayMessage('Oops!','You guessed a greater number.')
+        icon.innerHTML = `<ion-icon class="cross-icon" name="close-circle-outline"></ion-icon>`
     }
     else {
-        displayMessage('You guessed a lower number.')
+        displayMessage('Oops!','You guessed a lower number.')
+        icon.innerHTML = `<ion-icon class="cross-icon" name="close-circle-outline"></ion-icon>`
     }
 }
 
 function displayGuess(guess) {
     //clean values for next guess
-    // update preGuess array and Numm guess
+    // update preGuess array and NumGuess
     userInput.value = ''
     guessSlot.innerHTML += `${guess}, `
-    numGuess ++
-    remainingSlot.innerHTML = `${10-numGuess}`
+    numGuess  ++
+    const remaingGuess = 5 - numGuess
+    remainingSlot.innerHTML = `${remaingGuess}`
 }
 
-function displayMessage(message) {
+function displayMessage(heading,message) {
     //dom manipulation
-    lowOrHi.innerHTML  = `<h2>${message}</h2>`
+
+    msgHead.innerHTML  = `<h2>${heading}</h2>`
+    msg.innerHTML  = `<p>${message}</p>`
+    popup.classList.add('open-popup')
+
+    popupClose.addEventListener('click', function 
+        (e) {
+            // e.defaultPrevented()
+            popup.classList.remove('open-popup')
+        })
 }
 
 function endGame() {
     userInput.value='';
-    userInput.setAttribute('disables','')
+    userInput.setAttribute('disabled','')
     p.classList.add('button')
-    p.innerHTML = `<h2 id="newGame" >Start new Game</h2>`
+    p.innerHTML = `<h2 id="newGame" class="startNew">Start new Game</h2>`
     startOver.appendChild(p)
     playGame = false
     newGame()
@@ -96,7 +113,7 @@ function newGame() {
         preGuess = []
         numGuess = 0
         guessSlot.innerHTML = ''
-        remainingSlot.innerHTML = `${10-numGuess}`
+        remainingSlot.innerHTML = `${5-numGuess}`
         userInput.removeAttribute('disabled')
         startOver.removeChild(p)
         playGame = true
