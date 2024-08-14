@@ -53,11 +53,8 @@ body {
     margin: 0 30px;
 }
 
-.result-guide p {}
-
-.result-guide h5 {}
-
 input {
     border-radius: 10px;
     border: none;
+    outline: none;
 }
