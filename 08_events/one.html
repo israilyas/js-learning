@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+    <!-- Bootstrap CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #414141;
+            color: white;
+            text-align: center;
+        }
+
+        #images li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="my-5 fw-bolder">Amazing Image</h2>
+    <div>
+        <ul id="images" class="row g-5">
+            <li class="col-4"><img src="../asset/img1.jpg" alt="photoshop" id="image1" class="img-fluid"></li>
+            <li class="col-4"><img src="../asset/img2.jpg" alt="" id="image2" class="img-fluid"></li>
+            <li class="col-4"><img src="../asset/img3.webp" alt="" id="image3" class="img-fluid"
+                    onclick="alert('Image 3')"></li>
+            <!--1st approach==>avoid injecting events in html directly => not scalable-->
+            <li class="col-4"><img src="../asset/img4.jpeg" alt="" id="image4" class="img-fluid"></li>
+            <li class="col-12"><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <!-- Bootstrap JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Other approaches
+        // attachEvent() ==> Early times =>internet explorer
+        // jQuery -> on
+
+        // types, timestamp, defaultPrevented,
+        // target,toElement, srcElement, currentTarget,
+        //Interview important ==> clientX, clientY, screenX, screenY, tiiltX, tiltY
+        //altKey, ctrlKey,shiftKey, keyCode
+
+        // const img3 = document.getElementById('image3')
+        //2nd Approach 
+        // img3.onclick = function () {
+        //     alert('Image 3 is clicked');
+        // }// less features 
+
+        // 3rd approach 
+        // img3.addEventListener('click', function (e) {
+        //     alert('Third image Clicked Again')
+        //     // e ==> event object
+        //     console.log(e);
+        //     // this will return a object 
+        //     // 'browser event '
+        //     // 'environment event' ==> where mouse clicked => position etc
+
+        // }, false)
+        // third parameter of addEventListener is 'false' ==> by default is 'false' so if we dont use third parameter it means it is false
+
+        /* ++++++ Event Propagation ++++++ 
+        ==> true / false
+        ==> Event bubbling => false ==> inner to outer / Top to bottom
+        ==> Event capturing => true ==> outside to inside
+        */
+        
+        // Event Bubbling
+        // document.getElementById('images').addEventListener('click', function (e) {
+        //     alert('clicked inside the ul');
+        // },false)
+
+        // document.getElementById('image2').addEventListener('click', function (e) {
+        //     alert('Image2 Clicked');
+        //     e.stopPropagation()
+        // },false)
+
+        // Event Capturing
+        // document.getElementById('images').addEventListener('click', function (e) {
+        //     alert('clicked inside the ul');
+        // },true)
+
+        // document.getElementById('image2').addEventListener('click', function (e) {
+        //     alert('Image2 Clicked');
+        // },true)
+
+        //++++++ perventDefault ++++++
+        // document.getElementById('google').addEventListener('click', function (e) {
+        //     alert('Google Clicked')
+        //     e.preventDefault()
+        //     e.stopPropagation()
+        // },false)
+        
+        document.getElementById('images').addEventListener('click',function(e){
+            
+            if (e.target.tagName == 'IMG') {
+            alert(e.target.id);
+            const removeIt = e.target.parentNode    
+            removeIt.remove()
+            }
+            // removeIt.parentNode.removeChild(removeIt)
+        },false)
+    </script>
+</body>
+
+</html>
