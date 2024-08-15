@@ -1,0 +1,14 @@
+JavaScript Events are actions or occurrences that happen in the browser. They can be triggered by various user interactions or by the browser itself
+
+EVENT      ===>      DESCRIPTION
+
+click  =>   Triggered when an element is clicked.
+mouseover => Fired when the mouse pointer moves over an element.
+mouseout => Occurs when the mouse pointer leaves an element.
+keydown => Fired when a key is pressed down.
+keyup => Fired when a key is released.
+change => Triggered when the value of an input element changes.
+load => Occurs when a page has finished loading.
+submit => Fired when a form is submitted.
+focus =>  Occurs when an element gets focus.
+blur => Fired when an element loses focus.
