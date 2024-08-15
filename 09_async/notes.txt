@@ -1,0 +1,27 @@
+Javascript
+  => synchronous -> (code execute one by one)
+  => Single threaded (everything execute on one thread)
+  => default Js behavior
+
+  (javascript engine + runtime Environment (nodejs/browser))
+
+=> +++++ Execution Context +++++
+   => execute one line of code at a time
+   => console log -> 1
+   => console log -> 2
+
+each operation waits for the last one to complete before executing
+
+   => callstack  => memory heap
+
++++++  Blocking code   VS Non Blocking code ++++++
+
+==> Blocking code
+   ->Block the flow of programme
+   ->Read file sync
+   
+    
+==>Non Blocking code
+   ->Does not Block the flow of programme
+   ->Read file async
+    

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<body>
+    <div>
+        <h1>JS events </h1>
+        <p id="mouseOver" style="cursor: pointer;">Mouseover Event</p>
+        <!-- <p id="keyEvent" style="cursor: pointer;">Key Event</p> -->
+        <input  id="keyEvent" style="cursor: pointer;" type="text">
+    </div>
+    <script>
+        const mouseOver = document.getElementById('mouseOver');
+        const keyEvent = document.getElementById('keyEvent');
+
+        mouseOver.addEventListener('mouseover',function (e) {
+            const body = document.querySelector('body');
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        })
+        mouseOver.addEventListener('mouseout',function (e) {
+            const body = document.querySelector('body');
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        })
+        keyEvent.addEventListener('keydown',function (e) {
+            const body = document.querySelector('body');
+            keyEvent.style.backgroundColor = 'black'
+            keyEvent.style.color = 'white'
+        })
+        keyEvent.addEventListener('keyup',function (e) {
+            const body = document.querySelector('body');
+            keyEvent.style.backgroundColor = 'red'
+            keyEvent.style.color = 'white'
+        })
+        keyEvent.addEventListener('changechange',function (e) {
+            const body = document.querySelector('body');
+            keyEvent.style.backgroundColor = 'purple'
+            keyEvent.style.color = 'white'
+        })
+        
+    </script>
+</body>
+</html>

@@ -43,7 +43,7 @@ function validateGuess(guess) {
     }
     else {
         preGuess.push(guess)
-        if (numGuess === 4) {
+        if (numGuess === 10) {
             displayGuess(guess)
             displayMessage('Game Over',`Random number was ${randomNumber}`)
             endGame()
@@ -78,7 +78,7 @@ function displayGuess(guess) {
     userInput.value = ''
     guessSlot.innerHTML += `${guess}, `
     numGuess  ++
-    const remaingGuess = 5 - numGuess
+    const remaingGuess = 10 - numGuess
     remainingSlot.innerHTML = `${remaingGuess}`
 }
 
@@ -113,7 +113,7 @@ function newGame() {
         preGuess = []
         numGuess = 0
         guessSlot.innerHTML = ''
-        remainingSlot.innerHTML = `${5-numGuess}`
+        remainingSlot.innerHTML = `${10-numGuess}`
         userInput.removeAttribute('disabled')
         startOver.removeChild(p)
         playGame = true
