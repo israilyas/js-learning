@@ -1,7 +1,8 @@
 Javascript
+ => default Js behavior
   => synchronous -> (code execute one by one)
   => Single threaded (everything execute on one thread)
-  => default Js behavior
+ 
 
   (javascript engine + runtime Environment (nodejs/browser))
 
@@ -10,18 +11,35 @@ Javascript
    => console log -> 1
    => console log -> 2
 
-each operation waits for the last one to complete before executing
+=== each operation waits for the last one to complete before executing ====
 
    => callstack  => memory heap
 
 +++++  Blocking code   VS Non Blocking code ++++++
 
 ==> Blocking code
-   ->Block the flow of programme
+   ->Block the flow of program
    ->Read file sync
    
     
-==>Non Blocking code
-   ->Does not Block the flow of programme
+==> Non Blocking code
+   ->Does not Block the flow of program
    ->Read file async
+
+==========================
+   JS Engine
+   Web Api (
+      set timeout
+      Dom ApiSet interval
+      fetch
+      promises (high priority queue)
+
+      +++Register Callback+++
+   )
+   Task Que => make JS fast  and asynchronous
+
+   (-> Queue => add from end and remove from front )
     
+==========================
+
+nodejs ==> DOM Api not available

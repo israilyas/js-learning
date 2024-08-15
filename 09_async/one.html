@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Projects</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+        // ++++++++++ SetTimeOut
+        //  function
+        // setTimeout(function(){
+        //     alert("hello in 10 sec")
+        // },10000) 
+
+        // function reference as handler
+        const greet = function(){
+            // alert("hello 2 (in 2 second)")
+        }
+        
+        const changeText = function(){
+        const h1 = document.querySelector('h1')
+        h1.innerHTML = "Best JS Serries"
+        }
+
+        // ++++++ CLearTimeOut +++++++++
+
+        const changeMe = setTimeout(changeText, 5000); 
+        
+        document.querySelector('#stop').addEventListener('click',function(e){
+            clearTimeout(changeMe)
+        })
+
+        // they are not core js functions
+        // browser k through miltey hein yeh
+    </script>
+</body>
+</html>
