@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #414141;
+        }
+    </style>
 </head>
+
 <body>
+
     <!-- UNSENT
 The XMLHttpRequest client has been created, but the open() method hasn't been called yet.
 
@@ -20,6 +28,25 @@ Response's body is being received. If responseType is "text" or empty string, re
 
 DONE
 The fetch operation is complete. This could mean that either the data transfer has been completed successfully or failed. -->
-    
+
+    <script>
+        // XML HTTP Request: => haeavily Ajax  programming (Asunchrous JS and XML )
+
+        const requestUrl = 'https://api.github.com/users/israilyas';
+
+        const xhr = new XMLHttpRequest() // method
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data =JSON.parse (this.responseText)// convert string to json
+                console.log(typeof data); // STRING 
+                console.log(data.name);
+            }
+        }
+        xhr.send() // open called now
+    </script>
+
 </body>
+
 </html>
