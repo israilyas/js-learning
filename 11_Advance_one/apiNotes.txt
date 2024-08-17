@@ -1,0 +1,16 @@
+API - api is a talking language between two sysstems 
+the system could be backend and frontend, java and javascript, rubi and php etc 
+
+1) +++++ How to talk
+
+protocol = common language 
+
+API is just a data==> structure ==> datatype
+
+a) Protocol
+b) Data (which data you want to send)
+
+2) 
+login with google, login with githuub etc=> receive data from google 
+
+API k through ye kaam hota hae
