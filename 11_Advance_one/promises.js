@@ -1,12 +1,127 @@
-// promise is an object representing eventual completion
-const promise = new Promise()
+// // promise is an object representing eventual completion
+
+// fetch return promice
 
 
-FileSystemDirectoryHandle;lkjfdsal;;length;;kjkfdsa;;;;;;;;;;;;;;lkj;length;lkj;lkj
+//  Promise Creation
+const promiseOne = new Promise(function(resolve,reject){
+    // Do an async task
+    // database calls,cryptography,network 
+    setTimeout(function(){
+        console.log('Async task is completed');
+        resolve()
+    },3000)
+})
 
-asdfasdffsaj;lkj  
-asdf ;lkjjasdf ;lkjasdf lkjasdf ;lkjasd asdf ;lkjasdf ;lkj asdf ;lkjasdf ;lkjasdf ;lkjasddf ;lkjasdf ;lkkjasdf ;lkjj  
-asdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf; a       j     length
+// Promise Consumption
+//.then => resolve
+promiseOne.then(function(){
+    console.log("Promise consumed");
 
-asdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjkasdf ;llkjjasdf ;lkjjasddf ;lkjasdf ;lllkjasdf ;lkjasdf ;;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkkjasdf ;lkj
-asdf ;lkjasdf ;lllkjasdf ;lkjjasdf ;llllkjasdf ;lkjasdf ;lkjjasdf ;lkjasdf ;lkjjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ; lkjlkjlkj;lkj;lkj;;lkjjj;;lkj;lkj;lkj;lkjj;lkj;jlkj;lkj;ljkasdff ;lkjasdf ;lkjasdf ;lkjasdf ;lkasdf ;lkjasdf  ;;lkkjasdf ;lkjasdf ;lkkjasdf ;lkjasdf length;lkjasdf ;lkjasdf ;lkjjasdf;lkjasdf ;lkjasdf ;llkkasdf ;lkjkasdf ;llkjasdf ;lkjsaasdf ;lkjasdf ;lkjadasdf length;;llllkjasdf  ;lkjasdf ;lkjasdf ;lkjasdf ;lkjsasdf ;lkjasdf ;lkjasdf ;klkjasdf ;lkjasdf ;lkjsasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf length;;lkjasdf ;lkjasdf ;lkj asdf ;lkjad asdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkkjjasdf ;lkjasdf ;lkjasdf ;lkjasasdf ;lkjasdf ;lkjasdf ;lkjasdf ;jlkjasdf ;lllllkjasdf ;lkjasdf ;lkjasdf length;;lkkjasdf ;lkjassdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lklkjjasdf ;lkjasdf ;kllkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf  ;lkjasdf ;lkjasdf ;lkjasdf ;lkkkjlkasdf ;lkjasdf ;klkjasdf ;lkjasdf ;lkjasdf ;lkjsdf ;lkjasdf ;lkjasdf ;lkjasdf ;kljasdf ;lkjasdf ;lkjasdf ;lkjasdf ;llkjasdf ;lkjjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkkkjasdf ;lkkjasdf ;lkjasdf ;lkjasddf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasff ;lkjasdf ;lkljjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;klkjasdf ;lkjasdf ;lkkjasdf ;lkjassdf ;lkj ;asdf ;asdfgf';lkkkj glkkjasdf ;lkjasdf ;lkjasdf ;lkjasdf length;lkj aasdf ;lkkjasdf ;l;kjasdf ;lkjasdf ;lkkjjasdf ;ljassdf ;lkjasdf ; lkjasdf ;lkkjasdf ;lkjaaasdf ;lkjasd asdf ;lkjasdf ;lkjasdf ;lkjasd fasdf assdffasdfasdfasdfasdfasdfassdfasdf asdf asdf asdf asdf asdf ;lkjasdf ;lkjasdf ;lkjsasdf ;lkjasdf ;ljjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjassdf ;lkjasdf ;lkjasdf ;lkjasdf ;ljkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkkkjasdf ;lkjasdf  ;lkjasdf ;lkjsasdf ;lkjasdf ;lkjasdf ;lkjadsdf ; lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lasdf ;asdf ;lkjasdf  ;llkjasdf ;lkjsdf ;lkjasdf ;lkljlhkkkkkkkkkkkkkkkkkkkdsasdf ;lkjasdf ;lkjasdf ;lkjasdf ;lkjasdfg ;lkjhasddf ;lkjasddf ;lkjasdf ;lkj'asdf ;;lkjk';lkj
+})
+
+new Promise(function(resolve,reject){
+    setTimeout(function(){
+        console.log("Asynctask 2");
+        resolve()
+    },2000)
+}).then(function(){
+    console.log("Async 2 Resolved");
+
+})
+
+// Pass data in resolve
+const promiseThree = new Promise(function(resolve,reject){
+    setTimeout(function(){
+    resolve({
+        username:"israilyas",
+        email:"israiilyasq@gmail.com"
+    })
+    },1000)
+})
+
+promiseThree.then(function(user){
+    console.log(user);
+    console.log(user.username);
+
+})
+
+const promiseFour = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let error = true
+        if (!error) {
+            resolve({
+                username:"Isra Ilyas",
+                password:"1223uyrs"
+            })
+        }
+        else{
+            reject('ERROR: Something went wrong')
+        }
+    }, 1000);
+})
+
+const userName = promiseFour.then((user)=>{
+    console.log(user);
+    return user.username
+})
+.then((username)=>{
+console.log(username);
+
+})
+.catch(function(err){
+    console.log(err); 
+})
+.finally(()=> console.log("The promise is either resolve or rejected"))
+
+console.log(userName);
+
+
+//+++++++++++ ASYNC AWAIT +++++++++++++
+const promiseFive = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        let error = true
+        if (!error) {
+            resolve({
+                username: "Javascript",
+                password: "1223uyrs"
+            })
+        }
+        else {
+            reject('ERROR: JS went wrong')
+        }
+    }, 1000);
+})
+
+async function cunsumePromise() {
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+cunsumePromise()
+
+
+
+// async function getAllUsers() {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const data = await response.json()// it takes time to convert in js 
+//         console.log(data);
+//     } catch (error) {
+//         console.log(error);
+        
+//     }
+
+// }
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>console.log(data))
+.catch((error)=> console.log(error))
