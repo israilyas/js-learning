@@ -31,14 +31,14 @@ submit.addEventListener('click', function (e) {
 
                         // Set the card elements
                         console.log(data);
-                        naMe.innerHTML = data.name || 'No Name Provided';
+                        naMe.innerHTML = data.name || username;
                         image.setAttribute('src', data.avatar_url || 'default-avatar.jpg');
                         githubUrl.setAttribute('href', data.html_url);
                         githubUrl.textContent = 'GitHub Profile';
                         company.innerText = `Company: ${data.company || 'N/A'}`;
                         githubUrl.setAttribute('target','_blank')
-                        follower.innerText = `Followers: ${data.followers || 'N/A'}`;
-                        following.innerText = `Following: ${data.following || 'N/A'}`;
+                        follower.innerText = `Followers: ${data.followers || 0}`;
+                        following.innerText = `Following: ${data.following || 0}`;
                         loCation.innerText = `Location: ${data.location || 'N/A'}`;
                         publicRepo.innerText = `Public Repositories: ${data.public_repos || 'N/A'}`;
 
