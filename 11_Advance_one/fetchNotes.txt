@@ -1,0 +1,3 @@
+Fetch Queue ==> Microtask Queue/Priority Queue/Fetch Queue
+
+c:\Users\PMLS\Downloads\Screenshot 2024-08-18 214022.png
