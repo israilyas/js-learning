@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- small strings of data that are stored directly in the browser.
+    
+    => document.cookie donot overwrite the previous cookies intead it adds cookies
+
+    => cookies are key value pair separated by semicolon
+    -->
+    <script>
+        console.log(document.cookie);
+        document.cookie = "name1=isra1122334400"
+        document.cookie = "name2=isra11223344002"
+        document.cookie = "name1=isra1"
+        
+
+        // let key = prompt("Enter your key")
+        // let value = prompt("Enter your value")
+
+        // document.cookie = `${key}=${value}`
+
+        // console.log(document.cookie);
+
+        // +++ ENCODE SPECIAL CHARACTERS +++
+
+        let key = prompt("Enter your key")
+        let value = prompt("Enter your value")
+
+        document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`// this complete line of code is one set call
+
+        console.log(document.cookie);
+        console.log(`${decodeURIComponent(key)} ${decodeURIComponent(value)}`);
+        
+
+    </script>
+</body>
+
+</html>
