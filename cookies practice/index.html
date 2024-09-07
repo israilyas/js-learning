@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies practice</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    input{
+        width: 300px;
+        height: 40px;
+        text-transform: uppercase;
+        padding: 0px 10px;
+    }
+    .contentShow{
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+    .contentHide{
+        display: none;
+    }
+    #form.formShow{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    #form.formHide{
+        display: none;
+    }
+</style>
+<body>
+    <form id="form" class="formShow">
+        <input type="text" placeholder="uername" id="username" required>
+        <input type="email" placeholder="example@gmail.com" id="email"  required>
+        <input type="submit" id="submit">
+    </form>
+
+    <section id="content" class="contentHide">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, tenetur magni, eveniet qui modi accusantium quasi eaque sed, nesciunt amet odio iusto quae harum obcaecati dolorem aperiam. Sed, rem nemo!</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
